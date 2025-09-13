@@ -3,6 +3,14 @@ import joblib, numpy as np, pandas as pd, streamlit as st
 import requests
 from streamlit_folium import st_folium
 import folium
+# app.py
+from pathlib import Path
+import runpy
+p = Path(__file__).resolve().parent / "app_with_irrigation.py"
+if not p.exists(): raise FileNotFoundError(p)
+runpy.run_path(str(p), run_name="__main__")
+
+
 
 
 st.set_page_config(page_title="Tarım Ürünü Öneri", page_icon="🌾", layout="centered")
@@ -218,7 +226,7 @@ elif mode == "🌍 Harita (Beta)":
             st.dataframe(recs, use_container_width=True)
             st.bar_chart(recs.set_index("Mahsul (TR)")["Olasılık"])
 
-# ===================== (2) TOPLU TAHMİN (CSV, ML) =====================
+# ===================== (2) TOPLU TAHMİN (CSV, ML) ======================
 elif mode == "Toplu Tahmin (CSV, ML)":
     st.write("CSV yükleyerek birden çok nokta için tahmin al.")
     st.caption("Sütunlar tam olarak şu olmalı: **N, P, K, temperature, humidity, ph, rainfall**")

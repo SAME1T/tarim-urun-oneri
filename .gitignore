@@ -1,0 +1,13 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Üretilen dosyalar
+models/
+reports/
+logs/
+
+# Veri dosyaları (küçük ama lisans için repo dışı tutmak daha temiz)
+data/Crop_recommendation.csv
+data/Crop_recommendation_aug.csv

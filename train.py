@@ -62,12 +62,12 @@ print(f"[Split] Train: {X_tr.shape}, Test: {X_te.shape}")
 # ---- Model: Random Forest ----
 # RF; ölçeklemeye hassas değildir, hızlı ve güçlü bir başlangıçtır.
 clf = RandomForestClassifier(
-    n_estimators=400,
-    max_depth=None,
-    min_samples_leaf=1,
+    n_estimators=500,
+    class_weight="balanced_subsample",  # az örnekli sınıflara ağırlık ver
     random_state=42,
     n_jobs=-1
 )
+
 clf.fit(X_tr, y_tr)
 
 # ---- Değerlendirme (holdout test) ----

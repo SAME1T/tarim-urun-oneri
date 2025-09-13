@@ -40,10 +40,9 @@ def main():
     # Ecocrop özet aralıkları:
     # Buğday (wheat): 5–23 °C, 45–174 mm/ay, pH 5.5–7.0
     # Arpa   (barley): 2–20 °C, 31–200 mm/ay, pH 6.0–7.5
-    wheat  = make_crop("wheat",  50, t_range=(8,22),  r_month_range=(60,160), ph_range=(5.6,6.9),
-                       npk_center=center, hum_range=(40,70))
-    barley = make_crop("barley", 50, t_range=(4,19),  r_month_range=(40,150), ph_range=(6.1,7.4),
-                       npk_center=center, hum_range=(40,65))
+    wheat  = make_crop("wheat",  150, t_range=(8,22),  r_month_range=(60,160), ph_range=(5.6,6.9))
+    barley = make_crop("barley", 150, t_range=(4,19),  r_month_range=(40,150), ph_range=(6.1,7.4), hum_range=(40,65))
+
 
     df_aug = pd.concat([df[FEATURES], wheat, barley], ignore_index=True)
     OUT.parent.mkdir(parents=True, exist_ok=True)

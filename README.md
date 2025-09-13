@@ -2,6 +2,10 @@
 
 ### 🌱 Temel Özel## 📚 Veri Kaynakları ve Notlar
 
+
+çalıştır = streamlit run app.py
+
+
 ### 📊 Veri Setleri
 1. **Ana Veri Seti**
    - Kaynak: Crop Recommendation Dataset (Kaggle)
